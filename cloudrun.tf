@@ -8,11 +8,11 @@ resource "google_cloud_run_service" "backend" {
         image = "gcr.io/${var.project_id}/terraform-cbts-backend:latest"
         env {
           name  = "DB_USER"
-          value = google_sql_user.users.name
+          value = google_sql_user.postgres_user.name
         }
         env {
           name  = "DB_PASSWORD"
-          value = var.db_password
+          value = google_sql_user.postgres_user.password
         }
         env {
           name  = "DB_NAME"
@@ -20,7 +20,7 @@ resource "google_cloud_run_service" "backend" {
         }
         env {
           name  = "DB_IP"
-          value = google_sql_database_instance.postgres.public_ip_address
+          value = google_sql_database_instance.postgres.private_ip_address
         }
         env {
           name  = "GEMINI_KEY"

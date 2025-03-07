@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "bucket" {
-  name                        = "data-bucket"
+  name                        = "terraform-bucket"
   location                    = "EU"
   uniform_bucket_level_access = true
   hierarchical_namespace {
