@@ -63,16 +63,16 @@
 
 # }
 
-resource "google_sql_database" "database" {
-  name     = "terraform-cbts-db"
-  instance = google_sql_database_instance.postgres.name
-}
+# resource "google_sql_database" "database" {
+#   name     = "terraform-cbts-db"
+#   instance = google_sql_database_instance.postgres.name
+# }
 
-resource "google_sql_user" "users" {
-  name     = "terraform-cbts-user"
-  instance = google_sql_database_instance.postgres.name
-  password = var.db_password
-}
+# resource "google_sql_user" "users" {
+#   name     = "terraform-cbts-user"
+#   instance = google_sql_database_instance.postgres.name
+#   password = var.db_password
+# }
 
 # IAM roles for admin access
 resource "google_project_iam_member" "admin_monitoring_viewer" {
