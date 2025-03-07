@@ -6,10 +6,6 @@ output "database_instance" {
   value = google_sql_database_instance.postgres.name
 }
 
-output "uploads_bucket" {
-  value = google_storage_bucket.uploads.name
-}
-
 output "summaries_bucket" {
-  value = google_storage_bucket.summaries.name
+  value = google_storage_bucket.bucket.name
 }
