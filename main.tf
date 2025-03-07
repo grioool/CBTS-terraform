@@ -105,3 +105,8 @@ resource "google_project_service" "cloud_run" {
 resource "google_project_service" "sqladmin" {
   service = "sqladmin.googleapis.com"
 }
+
+resource "google_project_services" "project_apis" {
+  project = var.project_id
+  services   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com"]
+}
