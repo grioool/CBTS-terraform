@@ -1,11 +1,13 @@
-variable "gcp_svc_key" {
+variable "gcp_private_key_file_path" {
   description = "The GCP private key" 
   type        = string
+  default     = "service-account.json"
 }
 
 variable "project_id" {
   description = "The GCP project ID"
   type        = string
+  default = "direct-airfoil-451800-d5"
 }
 
 variable "region" {
